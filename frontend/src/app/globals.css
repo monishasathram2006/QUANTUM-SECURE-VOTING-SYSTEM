@@ -1,0 +1,109 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #05070f;
+  --foreground: #e7f6ff;
+  --muted: rgba(231, 246, 255, 0.6);
+  --accent: #2ea8ff;
+  --accent-2: #4df3ff;
+  --accent-3: #7b5cff;
+  --glass: rgba(12, 19, 36, 0.7);
+  --stroke: rgba(255, 255, 255, 0.08);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-space-grotesk);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-space-grotesk), "Segoe UI", sans-serif;
+}
+
+::selection {
+  background: rgba(46, 168, 255, 0.35);
+  color: #e7f6ff;
+}
+
+.glass-card {
+  background: var(--glass);
+  border: 1px solid var(--stroke);
+  box-shadow: 0 24px 80px rgba(6, 12, 30, 0.55);
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+}
+
+.neon-border {
+  border: 1px solid rgba(77, 243, 255, 0.45);
+  box-shadow: 0 0 20px rgba(77, 243, 255, 0.3);
+}
+
+.text-glow {
+  text-shadow: 0 0 18px rgba(46, 168, 255, 0.45);
+}
+
+.bg-quantum {
+  background-image: radial-gradient(
+      circle at 20% 20%,
+      rgba(46, 168, 255, 0.22),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(123, 92, 255, 0.2),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 50% 80%,
+      rgba(77, 243, 255, 0.18),
+      transparent 55%
+    );
+}
+
+.grid-overlay {
+  background-image: linear-gradient(
+      transparent 96%,
+      rgba(255, 255, 255, 0.04) 98%
+    ),
+    linear-gradient(90deg, transparent 96%, rgba(255, 255, 255, 0.04) 98%);
+  background-size: 48px 48px;
+}
+
+.scanline {
+  position: absolute;
+  inset: -30% 0 auto 0;
+  height: 40%;
+  background: linear-gradient(
+    180deg,
+    transparent,
+    rgba(77, 243, 255, 0.22),
+    transparent
+  );
+  animation: scan 2.8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.shimmer {
+  background-image: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.25) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2.2s linear infinite;
+}
